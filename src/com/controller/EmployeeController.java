@@ -33,5 +33,11 @@ public class EmployeeController {
 		
 	}
 	
+	// get single Employee 
+	 
+	public Employee getEmployee(int id)
+	{
+		return service.getEmployee(id);
+	}
 	
 }

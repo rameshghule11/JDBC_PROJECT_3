@@ -26,11 +26,17 @@ public class EmployeeMain {
 //		System.out.println(msg);
 //		
 // DELETE
-		try {
-		System.out.println(controller.delete(4));
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//		System.out.println(controller.delete(4));
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+		
+// get Single Employee 
+		
+		Employee employee=controller.getEmployee(3);
+		
+		System.out.println(employee);
 		
 		
 	}

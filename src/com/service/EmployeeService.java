@@ -37,6 +37,13 @@ public class EmployeeService {
 		String msg=dao.delete(id);
 		return msg;
 	}
+	
+	// get Single Employee
+	
+	public Employee getEmployee(int id)
+	{
+		return dao.getEmployeeById(id);
+	}
 
 }
 
