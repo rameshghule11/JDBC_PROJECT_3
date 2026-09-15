@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.entity.Employee;
 import com.jdbcConnection.JDBCUtil;
@@ -101,13 +102,47 @@ return null;
 	
 	// get Single Employee
 	
-	public Employee getEmployeeById(int id)
+//	public Employee getEmployeeById(int id)
+//	{
+//		Employee employee=null;
+//		try {
+//		PreparedStatement pst=con.prepareStatement("Select * from employee where id =?");
+//		
+//		pst.setInt(1, id);
+//		ResultSet rs= pst.executeQuery();
+//		
+//		while(rs.next())
+//		{
+//		int id1=rs.getInt("id");
+//		String name=rs.getString("name");
+//		String gender=rs.getString("gender");
+//		String dep= rs.getString("dep");
+//		String city=rs.getString("city");
+//		Double salary=rs.getDouble("salary");
+//		
+//		 employee=new Employee(id1,name,salary,dep,city,gender);
+//		}
+//		
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		return employee;
+//	}
+//	
+	
+	// Get All Employee 
+	
+	public ArrayList<Employee> getAllEmployee(int id)
 	{
+		ArrayList<Employee> employees=new ArrayList<Employee>();
+		
+		
+		
 		Employee employee=null;
 		try {
-		PreparedStatement pst=con.prepareStatement("Select * from employee where id =?");
+		PreparedStatement pst=con.prepareStatement("Select * from employee");
 		
-		pst.setInt(1, id);
 		ResultSet rs= pst.executeQuery();
 		
 		while(rs.next())
@@ -120,13 +155,15 @@ return null;
 		Double salary=rs.getDouble("salary");
 		
 		 employee=new Employee(id1,name,salary,dep,city,gender);
+		 
+		 employees.add(employee);
 		}
 		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		return employee;
+		return employees;
 	}
 	
 	

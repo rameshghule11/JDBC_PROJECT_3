@@ -1,5 +1,7 @@
 package com.main;
 
+import java.util.ArrayList;
+
 import com.controller.EmployeeController;
 import com.entity.Employee;
 import com.exception.SomethingWentWrongException;
@@ -12,7 +14,7 @@ public class EmployeeMain {
 	
 	// SAVE
 		
-//		Employee e=new Employee(5,"JayShreeRam ",52551,"word","male","hurt");	
+//		Employee e=new Employee(4,"JayShreeRam ",52551,"word","male","hurt");	
 //		String msg= controller.insertEmployee(e);
 //		
 //		System.out.println(msg);
@@ -33,11 +35,25 @@ public class EmployeeMain {
 //		}
 		
 // get Single Employee 
+//		try {
+//		Employee employee=controller.getEmployee(4);
+//		System.out.println(employee);
+//		
+//		}catch(Exception e) {
+//			System.out.println(e.getMessage());
+//		}
 		
-		Employee employee=controller.getEmployee(3);
 		
-		System.out.println(employee);
+	// get all Employee
+	try {
+	ArrayList<Employee> all= controller.getAll();
+	for(Employee emp:all) {
 		
+		System.out.println(emp);
+	}
+	}catch(Exception e) {
 		
+		System.out.println(e.getMessage());
+	}
 	}
 }
